@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+
+}
+
+.block {
+  width: 400px;
+  height: 150px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  
+}
+
+.tooltip:before,
+.tooltip:after {
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s;
+  left: 50px;
+  margin-bottom: -15px;
+  transition: margin .2s;
+  line-height: 1.3;
+
+}
+
+.tooltip:before {
+  max-width: 400px;
+  padding: 10px;
+  box-sizing: border-box;
+  bottom: 25px;
+  border-radius: 0px;
+  font-size: 12px;
+  text-align: center;
+  margin-left: -130px;
+  background: #FFFFFF;
+  content: attr(data-title);
+  color: #000000;
+  text-align: justify;
+}
+
+.tooltip:after {
+  content: "";
+  border-top: 7px solid #fafafa;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  bottom: 18px;
+  margin-left: -40px;
+
+}
+
+.tooltip:hover:before,
+.tooltip:hover:after {
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 0px;
+}
